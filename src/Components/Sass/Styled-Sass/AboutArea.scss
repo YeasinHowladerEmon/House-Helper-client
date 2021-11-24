@@ -1,0 +1,66 @@
+@import "../variables";
+.about-content {
+  margin-top: -8px;
+  margin-bottom: -8px;
+  span {
+    color: $font-color-aqlik-blue;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: $font-weight-600;
+  }
+  h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-top: 14px;
+    list-style-type: none;
+    padding: 0;
+    li {
+      font-weight: $font-weight-600;
+      font-size: 16px;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      .icon {
+        color: $font-color-aqlik-blue;
+        position: absolute;
+        top: 4px;
+        left: 0;
+      }
+    }
+  }
+  .block-content {
+    background-color: #f6fcfe;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .default-btn{
+    margin-top: 30px;
+  }
+}
+.about-img {
+  position: relative;
+  border: 10px solid #232350;
+  border-radius: 50%;
+  img {
+    border-radius: 50%;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .about-child {
+    border: 10px solid #232350;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    img {
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+}
