@@ -27,17 +27,17 @@
       h3 {
         font-size: 20px;
       }
-      &::before{
-          content: '';
-          top: 8px;
-          left: 8px;
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          background-color: $font-color-aqlik-blue;
+      &::before {
+        content: "";
+        top: 8px;
+        left: 8px;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: $font-color-aqlik-blue;
       }
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         top: 0px;
         left: 0px;
         position: absolute;
@@ -49,8 +49,8 @@
     }
   }
 }
-p:last-child{
-    margin-bottom: 0;
+p:last-child {
+  margin-bottom: 0;
 }
 .prevent-img {
   position: relative;
@@ -69,12 +69,13 @@ p:last-child{
     bottom: 0;
     left: -20px;
     animation: rotation 30s linear infinite;
-    @keyframes rotation { 
-        from { 
-            transform: rotate(0deg); 
-        } to { 
-            transform: rotate(360deg); 
-        }
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
     img {
       border-radius: 50%;

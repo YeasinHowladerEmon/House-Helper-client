@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { useAuth } from '../../Hooks/useAuth/useAuth';
+import '../Sass/Styled-Sass/SignupPage.scss'
 
 const ResetPassword = () => {
     const { resetPassword } = useAuth();
@@ -45,7 +46,7 @@ const ResetPassword = () => {
                                         <Link to="/login" className="now-login">Login Your Account</Link>
                                     </Col>
                                     <Col lg={6} md={6} sm={6}>
-                                        <p className="register-not">Not a Member ? <Link to="/signup">Sign Up</Link></p>
+                                        <p className="register-not">Not a Member ? <Link to="/sign-up">Sign Up</Link></p>
                                     </Col>
                                     <Col className="col-12">
                                         <Button className="default-btn btn-two" type="submit">Reset Password</Button>

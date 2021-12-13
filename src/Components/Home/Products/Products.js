@@ -5,15 +5,15 @@ import { UserContext } from '../../../App';
 import Product from '../Product/Product';
 
 const Products = () => {
-    const {product, setProduct} = useContext(UserContext)
+    const { product, setProduct } = useContext(UserContext)
     useEffect(() => {
         axios.get("http://localhost:5000/products")
-        .then(res => {
-            setProduct(res.data);
-            console.log(res.data);
-        }).catch(err => console.log(err))
+            .then(res => {
+                setProduct(res.data);
+            }).catch(err => console.log(err))
     }, [])
-    // console.log(product);
+
+
     return (
         <div className="pb-70">
             <div className="products-area">
@@ -26,7 +26,7 @@ const Products = () => {
                     <Row>
                         {
                             product.slice(0, 3).map(products => <Product
-                                 products={products} key={products._id}/>)
+                                products={products} key={products._id} />)
                         }
                     </Row>
                 </Container>

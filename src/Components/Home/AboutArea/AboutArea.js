@@ -39,7 +39,7 @@ const AboutArea = () => {
                                 </li>
                             </ul>
                             <p className="block-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab deserunt hic natus eum adipisci optio maxime itaque et.</p>
-                            <a href="" className="default-btn">Learn More</a>
+                            <a href="/" className="default-btn">Learn More</a>
                         </div>
                     </Col>
                     <Col lg={6}>

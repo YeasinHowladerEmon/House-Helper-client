@@ -5,11 +5,13 @@ import Service from '../Service/Service';
 
 const Services = () => {
     const [services, setServices] = useState([])
+    
     useEffect(() => {
         axios.get("http://localhost:5000/services")
             .then((res) => setServices(res.data))
             .catch((err) => console.log(err))
     }, [])
+
     return (
         <div className="services-area pb-70">
             <Container>

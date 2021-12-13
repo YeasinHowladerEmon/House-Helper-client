@@ -4,21 +4,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import { useAuth } from '../../../Hooks/useAuth/useAuth';
+import ProfilePopbar from '../../Home/ProfilePopbar/ProfilePopbar';
 import '../../Sass/Styled-Sass/Navber.scss'
+
+
+
 const Navber = () => {
     const { cartItems } = useContext(UserContext)
     const [isCollapsed, setIsCollapsed] = useState(null)
     const [isSticky, setSticky] = useState(false)
-    // useEffect(() => {
-    //     window.addEventListener("scroll", () => {
-    //         if (window.scrollY > 50) {
-    //             setSticky(true)
-    //         }
-    //         else {
-    //             setSticky(false)
-    //         }
-    //     })
-    // }, [])
+    const { user } = useAuth()
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -31,6 +28,7 @@ const Navber = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
     return (
         <>
             <Navbar
@@ -38,12 +36,12 @@ const Navber = () => {
                 fixed="top"
                 variant="light"
                 expand="lg"
-                className={(isSticky || isCollapsed) ? "shadow-sm bg-aqlik-blue py-2" : "py-4"}
+                className={((window.location.pathname === "/login" || window.location.pathname === "/sign-up") || isSticky || isCollapsed) ? "shadow-sm bg-aqlik-blue py-2" : "py-4"}
             >
                 <Container>
                     <Navbar.Brand
                         className="text-w"
-                        as={Link} to="/"
+                        href="/"
                     >ℋ<span>-ℍ⒠𝓵p̅eͤԻ</span>
                     </Navbar.Brand>
                     <Navbar.Toggle
@@ -56,7 +54,7 @@ const Navber = () => {
                         <Nav className="m-auto  fw-bold ">
                             <Nav.Link as={Link} to="/" onClick={() => window.scrollTo(500, 0)} className="text-ww me-xl-3">Home</Nav.Link>
                             <Nav.Link as={Link} to="/about" className="me-xl-3 text-ww">About</Nav.Link>
-                            <Nav.Link as={Link} to="/services" className="me-xl-3 text-ww">Services</Nav.Link>
+                            <Nav.Link as={Link} to="/service-container" className="me-xl-3 text-ww">Services</Nav.Link>
                             <Nav.Link as={Link} to="/shop" className="me-xl-3 text-ww">Shop</Nav.Link>
                             <Nav.Link as={Link} to="/dashboard/profile" className="me-xl-3 text-ww">Dashboard</Nav.Link>
                         </Nav>
@@ -72,7 +70,13 @@ const Navber = () => {
                                 </div>
                             </Nav.Link>
                             <Nav.Link as={Link} to="/contact" className="me-xl-3 text-ww">Contact</Nav.Link>
-                            <Nav.Link className="text-ww" as={Link} to="/login" >Login</Nav.Link>
+                            {
+                                user ?
+                                    <div
+                                        className="ms-xl-3"> <ProfilePopbar />
+                                    </div>
+                                    : <Nav.Link className="text-ww" as={Link} to="/login" >Login</Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

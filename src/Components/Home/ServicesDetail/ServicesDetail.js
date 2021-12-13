@@ -1,32 +1,32 @@
 import React, { useContext } from 'react';
-import { faFacebookF, faFacebookSquare, faInstagram, faInstagramSquare, faPinterestP, faPinterestSquare, faTwitter, faTwitterSquare, faYoutube, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagramSquare, faPinterestP, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useNavigate, useParams, Link } from 'react-router-dom';
-// import { Link, useNavigate } from 'react-router-dom';
+
 import { UserContext } from '../../../App';
 import '../../Sass/Styled-Sass/ServicesDetails.scss'
 import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 import Bg24 from '../../Share/PageTitleArea/Bg24';
 import Navber from '../../Share/Navber/Navber';
-import Footer from '../../Share/Footer/Footer';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
-const ServicesDetails = () => {
+const ServicesDetail = () => {
     const { details } = useContext(UserContext)
     let navigate = useNavigate();
     console.log(details);
-    const { id } = useParams()
+    let { id } = useParams()
     const servicesDetails = (details._id === id) && details;
-    // const (details._id === )
     console.log("paise", servicesDetails);
     if (servicesDetails === false) {
         navigate('/')
     }
+
+
     return (
         <>
-            <Navber/>
-            <Bg24/>
+            <Navber />
+            <Bg24 />
             <div className="services-details-area pt-100 pb-70">
                 <Container>
                     <Row>
@@ -36,27 +36,27 @@ const ServicesDetails = () => {
                                     <img src={servicesDetails.image} alt="" />
                                     <ul>
                                         <li>
-                                            <a href="">
+                                            <a href="/">
                                                 <FontAwesomeIcon icon={faFacebookF} className="icon" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
+                                            <a href="/">
                                                 <FontAwesomeIcon className="icon" icon={faTwitter} />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
+                                            <a href="/">
                                                 <FontAwesomeIcon className="icon" icon={faPinterestP} />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
+                                            <a href="/">
                                                 <FontAwesomeIcon className="icon" icon={faInstagramSquare} />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
+                                            <a href="/">
                                                 <FontAwesomeIcon className="icon" icon={faYoutube} />
                                             </a>
                                         </li>
@@ -78,7 +78,9 @@ const ServicesDetails = () => {
                                             <span>Closed</span>
                                         </li>
                                     </ul>
-                                    <Link className="default-btn" href="">Request An Appointment</Link>
+                                    <div style={{ marginTop: "15px", marginLeft: "60px" }}>
+                                        <Link to="/" className="default-btn" href="">Request An Appointment</Link>
+                                    </div>
                                 </div>
                             </div>
                         </Col>
@@ -243,8 +245,9 @@ const ServicesDetails = () => {
                 </Container>
             </div>
             {/* <Footer/> */}
+
         </>
     );
 };
 
-export default ServicesDetails;
+export default ServicesDetail;

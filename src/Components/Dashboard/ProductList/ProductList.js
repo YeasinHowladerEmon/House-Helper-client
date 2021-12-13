@@ -6,8 +6,12 @@ import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import swal from 'sweetalert';
+import { useAuth } from '../../../Hooks/useAuth/useAuth';
+
+
 
 const ProductList = () => {
+    const { user } = useAuth()
     const [product, setProduct] = useState([])
     useEffect(() => {
         axios.get("http://localhost:5000/products")
@@ -17,8 +21,21 @@ const ProductList = () => {
             }).catch(err => console.log(err))
     }, [])
 
+
     // product deleting site
     const handleDelete = (id) => {
+        let idMatched = false;
+        for (let i = 0; i < 9; i++) {
+            const { _id } = product[i];
+            if (id === _id) {
+                console.log(id === _id)
+                idMatched = true
+                console.log(idMatched)
+            }
+        }
+        if (user?.email === "admin@test.com" && idMatched) {
+            return swal("Permission restriction!", "As a admin@test, you don't have permission to delete 9 core products. But you can delete your added products.", "info");
+        }
 
 
         swal({

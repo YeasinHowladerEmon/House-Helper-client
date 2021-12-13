@@ -1,23 +1,22 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import { Col, Container, Row } from 'react-bootstrap';
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-
 import React from 'react';
+import { faBars, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext, useState } from "react";
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import '../../Sass/Styled-Sass/Dashboard.scss'
 import { faFileUpload, faListUl, faTimes, faUserCircle } from "@fortawesome/free-solid-svg-icons";
-
 import '../../Sass/Styled-Sass/Sidebar.scss'
+import { UserContext } from "../../../App";
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { admin } = useContext(UserContext)
 
     return (
         <section>
             <Container fluid>
                 <Row>
-
                     <Col lg={2} md={12} sm={12}>
                         <div id="sidebar">
                             <div className={`${isOpen ? "d-block" : "d-lg-block d-none"} p-0 sidebar-wrapper`}>
@@ -45,21 +44,22 @@ const Dashboard = () => {
                                             </NavLink>
                                         </li>
                                         <li className="sidebar-item active">
-                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="addProduct"><FontAwesomeIcon icon={faUserCircle} className="icon" /> <span>AddProduct</span></NavLink>
+                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="customerOrderList"><FontAwesomeIcon icon={faListUl} className="icon" /> <span>Customer Order  List</span></NavLink>
                                         </li>
-                                        <li className="sidebar-item active">
-                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="orderList"><FontAwesomeIcon icon={faUserCircle} className="icon" /> <span>Order List</span></NavLink>
-                                        </li>
-                                        <li className="sidebar-item active">
-                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="productList"><FontAwesomeIcon icon={faUserCircle} className="icon" /> <span>Product List</span></NavLink>
-                                        </li>
-                                        <li className="sidebar-item active">
-                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="serviceList"><FontAwesomeIcon icon={faUserCircle} className="icon" /> <span>Service List</span></NavLink>
-                                        </li>
-                                       
+                                        {admin &&
+                                            <> <li className="sidebar-item active">
+                                                <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="addProduct"><FontAwesomeIcon icon={faFileUpload} className="icon" /> <span>AddProduct</span></NavLink>
+                                            </li>
+                                                <li className="sidebar-item active">
+                                                    <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="productList"><FontAwesomeIcon icon={faListUl} className="icon" /> <span>Product List</span></NavLink>
+                                                </li>
+                                                <li className="sidebar-item active">
+                                                    <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="makeAdmin"><FontAwesomeIcon icon={faUserPlus} className="icon" /> <span>Make Admin</span></NavLink>
+                                                </li>
+                                            </>
+                                        }
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
                     </Col>
@@ -77,9 +77,7 @@ const Dashboard = () => {
                             </header>
                             <Outlet />
                         </div>
-
                     </Col>
-
                 </Row>
             </Container>
         </section>

@@ -1,24 +1,21 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../App";
 
 export const useCart = () => {
-    // const items = () => localStorage.getItem("cartItems")
+  const { cartItems, setCartItems } = useContext(UserContext)
 
-    // const addItem = (item) => {
-    //     const previousItems = items() || []
-    //     const removedItems = previousItems.filter(i => i._id !== item._id) || []
-    //     localStorage.setItem("cartItems", JSON.stringify([...removedItems, item]))
-    // }
-    // const removeItem = (id) => {
-    //     const removedItems = items()?.filter(item => item._id !== id)
-    //     localStorage.setItem("cartItems", JSON.stringify(removedItems))
-    // }
+  const handleClear = () => {
+    localStorage.clear();
+  }
 
-    const { cartItems, setCartItems } = useContext(UserContext)
-
-     const handleClear = () => { 
-      localStorage.clear();
-}
+  const doubleAdded = (products, count) => {
+    const exist = cartItems.find((x) => x._id === products._id);
+    if (exist) {
+      setCartItems(cartItems.map((x) => x._id === products._id ? { ...exist, qty: exist.qty + count } : x))
+    } else {
+      setCartItems([...cartItems, { ...products, qty: count }]);
+    }
+  }
 
   const onAdd = (products) => {
 
@@ -43,18 +40,15 @@ export const useCart = () => {
     const exist = cartItems.find((x) => x._id === products._id);
     if (exist.qty) {
       setCartItems(cartItems.filter((x) => x._id !== products._id))
-    } else {
-      setCartItems([...cartItems, { ...products, qty: 0 }]);
     }
   }
 
 
-
-
-    return {
-        onAdd,
-       onRemove,
-       onItemRemove,
-       handleClear
-    }
+  return {
+    onAdd,
+    doubleAdded,
+    onRemove,
+    onItemRemove,
+    handleClear
+  }
 }

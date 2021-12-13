@@ -1,5 +1,12 @@
 {
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    }
+    },
+    "cSpell.words": [
+        "Charecter",
+        "datetime",
+        "fontawesome",
+        "fortawesome",
+        "jarallax"
+    ]
 }

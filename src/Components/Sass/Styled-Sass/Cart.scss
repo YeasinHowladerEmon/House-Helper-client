@@ -94,6 +94,7 @@
               overflow: hidden;
               span {
                 font-weight: 500;
+                margin-top: -23px;
               }
               .remove {
                 color: #666;
@@ -111,7 +112,7 @@
       }
     }
   }
-  .cart-buttons {
+  .cart-button {
     margin-top: 30px;
   }
   .cart-totals {
@@ -149,11 +150,11 @@
     }
   }
 }
-.table-responsive {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  & > .table-bordered {
-    border: none;
-  }
-}
+// .table-responsive {
+//   display: block;
+//   width: 100%;
+//   overflow-x: auto;
+//   & > .table-bordered {
+//     border: none;
+//   }
+// }

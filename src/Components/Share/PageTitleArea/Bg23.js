@@ -7,21 +7,21 @@ import '../../Sass/Styled-Sass/bg24.scss'
 const Bg23 = () => {
     return (
         <div className="page-title-area bg-23">
-        <Container>
-            <div className="page-title-content">
-                <h2>
-                    {window.location.pathname.replace(/\//, '')}
-                </h2>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li><FontAwesomeIcon icon={faLongArrowAltRight} className="icon" /></li>
-                    <li className="active">{window.location.pathname.replace(/\//, '')}</li>
-                </ul>
-            </div>
-        </Container>
-    </div>
+            <Container>
+                <div className="page-title-content">
+                    <h2>
+                        {window.location.pathname.replace(/\//, '')}
+                    </h2>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li><FontAwesomeIcon icon={faLongArrowAltRight} className="icon" /></li>
+                        <li className="active">{window.location.pathname.replace(/\//, '')}</li>
+                    </ul>
+                </div>
+            </Container>
+        </div>
     );
 };
 

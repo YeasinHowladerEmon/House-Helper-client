@@ -1,0 +1,104 @@
+.checkout-area {
+  .billing-details {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 28px 0 #0000000f;
+    .form-group {
+      margin-bottom: 20px;
+      .form-label {
+        display: block;
+        color: #232350;
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        .required {
+          color: red;
+        }
+      }
+    }
+  }
+  .order-details {
+    .order-table {
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 2px 28px 0 #0000000f;
+      table {
+        thead {
+          tr {
+            th {
+              border-bottom-width: 0;
+              vertical-align: middle;
+              border-color: #eaedff;
+              padding: 15px 20px;
+              font-weight: 700;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              vertical-align: middle;
+              color: #232350;
+              border-color: #eaedff;
+              font-size: 14px;
+              padding-left: 20px;
+              padding-right: 20px;
+              &.product-name {
+                p {
+                  color: #232350;
+                  font-weight: 500;
+                  font-size: 15px;
+                }
+              }
+              &.order-subtotal {
+                span {
+                  color: #232350;
+                  font-weight: 600;
+                }
+              }
+              &.total-price {
+                span {
+                  color: #232350;
+                  font-weight: 600;
+                }
+              }
+              &.order-subtotal-price {
+                font-weight: 600;
+              }
+              &.product-subtotal {
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .payment-box {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 28px 0 #0000000f;
+    margin-top: 30px;
+    .payment-method {
+      p {
+        label {
+          color: #232350;
+          font-weight: 600;
+          margin-left: 10px;
+        }
+      }
+    }
+    .default-btn {
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+.table-bordered {
+  td,
+  th {
+    border: 1px solid #dee2e6;
+  }
+}

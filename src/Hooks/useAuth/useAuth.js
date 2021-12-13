@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import firebaseConfig from "../../Components/allAuth/firebaseConfig";
 import firebase from "firebase/compat/app";
-import { getAuth, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, getIdToken } from "firebase/auth";
 import toast from "react-hot-toast";
-import {  useHistory} from 'react-router-dom';
+import axios from "axios";
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
 
@@ -14,16 +14,22 @@ const provider = new GoogleAuthProvider();
 
 export const useAuth = () => {
 
-    // const { path } = location.state || { path: '/' };
 
     const [user, setUser] = useState({})
 
+    // const [adminLoading, setAdminLoading] = useState(true);
+    const [token, setToken] = useState('')
+
     const googleSignIn = () => {
-        return signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider).then(res => {
+            const user = res.user;
+            saveUser(user.email, user.displayName, "put")
+        })
     }
     const signup = (name, email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
             .then(res => {
+                saveUser(email, name, "post");
                 updateUserName(name)
                 return res
             })
@@ -48,8 +54,11 @@ export const useAuth = () => {
         const subs = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
+                getIdToken(user)
+                    .then(idToken => {
+                        setToken(idToken)
+                    })
                 toast.success('Successfully Logged In!!!');
-                console.log("aise", user);
             } else {
                 setUser(false)
             }
@@ -57,6 +66,15 @@ export const useAuth = () => {
         return subs;
     }, [])
 
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        console.log(email, displayName);
+        axios({
+            method: method,
+            url: 'http://localhost:5000/users',
+            data: user
+        }).then(res => console.log(res.data))
+    }
 
     return {
         signup,
@@ -64,6 +82,7 @@ export const useAuth = () => {
         googleSignIn,
         resetPassword,
         user,
-        logOut
+        logOut,
+        token,
     }
 }

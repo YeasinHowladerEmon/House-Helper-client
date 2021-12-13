@@ -172,7 +172,7 @@
     visibility: hidden;
     transition: 0.5s;
   }
-  &:hover{
+  &:hover {
     color: #fff;
     background-color: #232350;
   }
@@ -187,17 +187,17 @@
     transition: 0.5s;
     font-size: 20px;
   }
-  &:hover .icon:first-child{
+  &:hover .icon:first-child {
     opacity: 0;
     top: 0;
     visibility: hidden;
   }
-  .icon:last-child{
+  .icon:last-child {
     opacity: 0;
     visibility: hidden;
-    top: 60%; 
+    top: 60%;
   }
-  &:hover .icon:last-child{
+  &:hover .icon:last-child {
     opacity: 1;
     top: 50%;
     visibility: visible;
