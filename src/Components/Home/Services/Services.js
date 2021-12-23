@@ -1,14 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import SkeletonContainer from '../../Share/SkeletonContainer/SkeletonContainer';
 import Service from '../Service/Service';
+import '../../Sass/Styled-Sass/service.scss';
+import '../../Sass/Styled-Sass/SwiperStyled.scss';
+
 
 const Services = () => {
     const [services, setServices] = useState([])
+    const [isLoading, setLoading] = useState(true)
     
     useEffect(() => {
         axios.get("http://localhost:5000/services")
-            .then((res) => setServices(res.data))
+            .then((res) => {
+                setLoading(false)
+                setServices(res.data)
+            })
             .catch((err) => console.log(err))
     }, [])
 
@@ -22,6 +30,7 @@ const Services = () => {
                 </div>
                 <Row>
                     {
+                        isLoading ? <> <SkeletonContainer/> <SkeletonContainer/> <SkeletonContainer/> </> : 
                         services.map(services => <Service key={services._id} services={services} />)
                     }
                 </Row>

@@ -83,3 +83,42 @@ p:last-child {
     }
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .prevent-content{
+    h2{
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    ul{
+      li{
+        max-width: 49%;
+        display: inline-block;
+      }
+    }
+  }
+  .prevent-img{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    img{
+      width: 100%;
+    }
+    .prevent-child{
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .prevent-content{
+    h2{
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  .prevent-img {
+    .prevent-child {
+      max-width: 100px;
+    }
+  }
+}

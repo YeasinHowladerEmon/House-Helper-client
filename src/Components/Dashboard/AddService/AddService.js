@@ -88,7 +88,7 @@ const AddProduct = () => {
                                     placeholder="Upload photo" />
                             </Form.Group>
                         </Col>
-                        <Col lg={5} sm={12} md={12} className="mt-5 mt-2">
+                        <Col lg={5} sm={12} md={12} className="mt-5">
                             <Form.Group>
                                 <Button type="submit" className="default-btn">
                                     Submit

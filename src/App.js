@@ -2,7 +2,6 @@ import { createContext, lazy, Suspense, useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-import './App.scss';
 import { Toaster } from 'react-hot-toast';
 import Shop from './Components/Home/Shop/Shop';
 import Cart from './Components/Home/Cart/Cart';
@@ -73,7 +72,7 @@ function App() {
               </>} />
               <Route path="customerOrderList" element={<>
                 <div className="page-heading">
-                  <h2>Customer Order List</h2>
+                  <h2>Order List</h2>
                 </div>
                 <div id="page-content">
                   <CustomerOrderLists />

@@ -3,7 +3,7 @@ import { faCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import '../../Sass/Styled-Sass/AboutArea.scss';
+import '../../Sass/Styled-Sass/AboutArea.scss'
 import aboutImg from '../../Share/image/about-img.jpg'
 import aboutChild from '../../Share/image/about-child.jpg'
 const AboutArea = () => {

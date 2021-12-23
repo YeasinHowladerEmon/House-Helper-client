@@ -20,7 +20,7 @@ const Profile = () => {
             alert("failed to log out")
         }
     }
-    console.log(user);
+    // console.log(user.email);
     return (
         <section className="profile-area ptb-100">
             <Container>
@@ -32,10 +32,11 @@ const Profile = () => {
                                     user.photoURL === null ? <img src="https://i.ibb.co/5GzXkwq/user.png" alt="" width="200" height="100" /> : <img src={user.photoURL} alt={user.photoURL} width="200" height="100" />
                                 }
                             </Col>
+                            <br />
                             <Col md={6} lg={6} sm={12} className="information-body">
                                 <h4>Name:{" "}{user.displayName}</h4>
                                 <p>Email:{" "}{user.email}</p>
-                                <Button className="btn default-btn" style={{ marginTop: "25px" }} onClick={handleLogout}>Log Out</Button>
+                                <Button className="btn default-btn" onClick={handleLogout}>Log Out</Button>
                             </Col>
                         </Row>
                     </div>

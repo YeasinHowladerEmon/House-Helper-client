@@ -10,7 +10,7 @@ const Service = ({ services }) => {
     const { setDetails } = useContext(UserContext)
     
     return (
-        <Col lg={4} sm={12}>
+        <Col lg={4} md={6} sm={12}>
             <div className="single-services">
                 <Link to={`/service-Details/${services._id}`} onClick={() => setDetails(services)}>
                     <img src={services.image} alt="" />

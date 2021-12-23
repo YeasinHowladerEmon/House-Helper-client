@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyC55ubJ1jyQbOVtswnpHIQH17EIPqGb3Mk",
-    authDomain: "fir-auth-v9.firebaseapp.com",
-    projectId: "fir-auth-v9",
-    storageBucket: "fir-auth-v9.appspot.com",
-    messagingSenderId: "843416473756",
-    appId: "1:843416473756:web:da92fb609e74cba498dd59"
+    apiKey: "AIzaSyDSm207zB_o-WRkTdtXanpRDgTSjaM5DHM",
+    authDomain: "your-house-helper-602ab.firebaseapp.com",
+    projectId: "your-house-helper-602ab",
+    storageBucket: "your-house-helper-602ab.appspot.com",
+    messagingSenderId: "18936668086",
+    appId: "1:18936668086:web:119a2f09ef388adcfdeb17"
 };
 export default firebaseConfig;

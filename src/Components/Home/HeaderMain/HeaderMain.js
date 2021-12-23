@@ -17,18 +17,20 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const HeaderMain = () => {
     return (
-        <div className="hero-slider-area-dot">
-            <Swiper spaceBetween={30} centeredSlides={true} autoplay={{
-                "delay": 10000,
-                "disableOnInteraction": false
-            }} navigation={true} className="mySwiper">
+        <div className="hero-slider-area">
+            <Swiper spaceBetween={30} centeredSlides={true}
+            //  autoplay={{
+            //     "delay": 10000,
+            //     "disableOnInteraction": false
+            // }} 
+            navigation={true} className="mySwiper">
                 <SwiperSlide>
                     <div className="slider-item slider-item-bg-1">
                         <div className="d-table">
                             <div className="d-table-cell">
                                 <div className="container">
-                                    <Row className="row align-items-center">
-                                        <Col lg={9} md={6}>
+                                    <Row className="align-items-center">
+                                        <Col lg={9} >
                                             <div className="slide-text one">
                                                 <h1>Cleaning passion for now</h1>
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae ad reiciendis similique harum quidem?</p>
@@ -38,7 +40,7 @@ const HeaderMain = () => {
                                                 </div>
                                             </div>
                                         </Col>
-                                        <Col lg={3} md={6}>
+                                        <Col lg={3}>
                                             <div className="video-btn-animat one">
                                                 <a href="/" className="video-btn popup-youtube">
                                                     <FontAwesomeIcon style={{ position: 'relative', top: "-3px", left: "1px" }} icon={faPlay} />
@@ -55,13 +57,13 @@ const HeaderMain = () => {
                     <div className="slider-item slider-item-bg-3">
                         <div className="d-table">
                             <div className="d-table-cell">
-                                <div className="container fluid">
+                                <div className="container">
                                     <Row className="align-items-center">
                                         <Col lg={9}>
                                             <div className="slide-text one" >
                                                 <h1>Cleaning passion for now</h1>
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae ad reiciendis similique harum quidem?</p>
-                                                <div className="slide-btn" style={{ marginBottom: "10px" }}>
+                                                <div className="slide-btn">
                                                     <Link to="/contact" className="default-btn">Contact</Link>
                                                     <Link to="/" className="default-btn active">About Us</Link>
                                                 </div>
@@ -69,7 +71,7 @@ const HeaderMain = () => {
                                         </Col>
                                         <Col lg={3}>
                                             <div className="video-btn-animat one">
-                                                <a href="" className="video-btn popup-youtube">
+                                                <a href="/" className="video-btn popup-youtube">
                                                     <FontAwesomeIcon style={{ position: 'relative', top: "-3px", left: "1px" }} icon={faPlay} />
                                                 </a>
                                             </div>
@@ -90,7 +92,7 @@ const HeaderMain = () => {
                                             <div className="slide-text one">
                                                 <h1>Cleaning passion for now</h1>
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae ad reiciendis similique harum quidem?</p>
-                                                <div className="slide-btn" style={{ marginBottom: "10px" }}>
+                                                <div className="slide-btn" >
                                                     <Link to="/contact" className="default-btn">Contact</Link>
                                                     <Link to="/" className="default-btn active">About Us</Link>
                                                 </div>
@@ -98,7 +100,7 @@ const HeaderMain = () => {
                                         </Col>
                                         <Col lg={3}>
                                             <div className="video-btn-animat one">
-                                                <a href="" className="video-btn popup-youtube">
+                                                <a href="/" className="video-btn popup-youtube">
                                                     <FontAwesomeIcon style={{ position: 'relative', top: "-3px", left: "1px" }} icon={faPlay} />
                                                 </a>
                                             </div>

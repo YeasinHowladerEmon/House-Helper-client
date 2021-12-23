@@ -93,3 +93,28 @@ p {
     font-size: 10px;
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .section-title {
+    margin-bottom: 30px;
+    h2 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-title {
+    margin-bottom: 30px !important;
+    h2 {
+      font-size: 25px !important;
+    }
+  }
+  .single-services {
+    .services-content{
+      padding: 15px 0 0;
+    }
+  }
+}
+
+

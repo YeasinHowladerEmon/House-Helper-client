@@ -8,7 +8,6 @@ const AdminRoute = ({ children, ...rest }) => {
     const { user } = useAuth();
     const { admin } = useContext(UserContext)
     const location = useLocation()
-    console.log(admin)
     if (user && admin) {
         return children
     }

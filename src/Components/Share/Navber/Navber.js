@@ -53,7 +53,7 @@ const Navber = () => {
                     >
                         <Nav className="m-auto  fw-bold ">
                             <Nav.Link as={Link} to="/" onClick={() => window.scrollTo(500, 0)} className="text-ww me-xl-3">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/about" className="me-xl-3 text-ww">About</Nav.Link>
+                            <Nav.Link as={Link} to="/" className="me-xl-3 text-ww">About</Nav.Link>
                             <Nav.Link as={Link} to="/service-container" className="me-xl-3 text-ww">Services</Nav.Link>
                             <Nav.Link as={Link} to="/shop" className="me-xl-3 text-ww">Shop</Nav.Link>
                             <Nav.Link as={Link} to="/dashboard/profile" className="me-xl-3 text-ww">Dashboard</Nav.Link>

@@ -59,3 +59,43 @@
     }
   }
 }
+
+/// skeleton design
+
+.skeleton-product {
+  background-color: #fff;
+  box-shadow: 0 0 20px 3px #0000000d;
+  padding: 30px;
+  .skeleton-img {
+    text-align: center;
+  }
+  .skeleton-content {
+    margin-top: 10px;
+    text-align: center;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .product-img {
+    img {
+      width: 100%;
+    }
+  }
+  .single-product {
+    .product-img {
+      .default-btn {
+        bottom: 20px;
+        left: 0;
+      }
+    }
+  }
+  .default-btn{
+    padding: 15px 15px !important;
+    font-size: 15px !important;
+  }
+}

@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import process1 from '../../Share/image/process1.png'
 import process2 from '../../Share/image/process2.png'
 import process3 from '../../Share/image/process3.png';
-import '../../Sass/Styled-Sass/ProcessArea.scss'
+import "../../Sass/Styled-Sass/ProcessArea.scss";
 
 const ProcessArea = () => {
     return (

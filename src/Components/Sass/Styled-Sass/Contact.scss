@@ -62,3 +62,11 @@ textarea {
     height: 130px;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .contact-area{
+    .contact-wrap{
+      padding: 20px;
+    }
+  }
+}

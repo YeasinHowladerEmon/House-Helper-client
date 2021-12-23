@@ -64,3 +64,39 @@
     }
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-content{
+    margin-bottom: 30px;
+    h2{
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  .about-img {
+    img{
+      width: 100%;
+    }
+    .about-child{
+      display: block;
+    }
+  }
+}
+@media only screen and (max-width: 767px){
+  .about-content{
+    margin-bottom: 30px;
+    h2{
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+    .default-btn{
+      margin-top: 20px;
+    }
+  }
+  .about-img{
+    .about-child{
+      img{
+        max-width: 100px;
+      }
+    }
+  }
+} 

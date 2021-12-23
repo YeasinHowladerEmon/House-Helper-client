@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../../Sass/variables";
 .bg-color {
   background-color: #f4fbfe;
 }
@@ -79,5 +79,35 @@
   font-size: 14px;
   &:hover {
     color: $font-color-aqlik-blue;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pt-100 {
+    padding-top: 50px;
+  }
+  .ptb-100 {
+    padding-top: 50px;
+  }
+  .section-title {
+    margin-bottom: 30px;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .single-process {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .single-project {
+    width: 90%;
+    .project-content {
+      padding: 15px !important;
+    }
+  }
+  .single-process{
+    padding: 15px;
   }
 }

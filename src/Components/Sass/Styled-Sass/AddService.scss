@@ -12,3 +12,16 @@
 .btn-upload {
   padding: 10px;
 }
+
+@media only screen and (max-width: 767px) {
+  .addService-area{
+    form{
+      .addService-form-action{
+        padding: 10px;
+        .mt-5{
+          text-align: center;
+        }
+      }
+    }
+  }
+}

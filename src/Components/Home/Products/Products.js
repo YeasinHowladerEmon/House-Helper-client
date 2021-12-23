@@ -1,14 +1,17 @@
 import axios from 'axios';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { UserContext } from '../../../App';
+import SkeletonContainer from '../../Share/SkeletonContainer/SkeletonContainer';
 import Product from '../Product/Product';
 
 const Products = () => {
     const { product, setProduct } = useContext(UserContext)
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         axios.get("http://localhost:5000/products")
             .then(res => {
+                setIsLoading(false)
                 setProduct(res.data);
             }).catch(err => console.log(err))
     }, [])
@@ -25,6 +28,7 @@ const Products = () => {
                     </div>
                     <Row>
                         {
+                               isLoading ? <> <SkeletonContainer/> <SkeletonContainer/> <SkeletonContainer/> </> : 
                             product.slice(0, 3).map(products => <Product
                                 products={products} key={products._id} />)
                         }

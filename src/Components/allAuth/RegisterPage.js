@@ -5,8 +5,9 @@ import toast from 'react-hot-toast';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import swal from 'sweetalert';
 import { useAuth } from '../../Hooks/useAuth/useAuth';
-import '../Sass/Styled-Sass/SignupPage.scss'
+import '../Sass/Styled-Sass/LoginPage.scss';
 import Navber from '../Share/Navber/Navber';
+import Bg23 from '../Share/PageTitleArea/Bg23';
 
 const RegisterPage = () => {
     const { register, handleSubmit, getValues, formState: { errors } } = useForm();
@@ -50,6 +51,7 @@ const RegisterPage = () => {
     return (
         <section>
             <Navber />
+            <Bg23 />
             <div className="user-area-all-style sign-up-area ptb-100">
                 <Container>
                     <div className="section-title">

@@ -23,6 +23,14 @@ const Project = () => {
             .then(res => setProjects(res.data))
             .catch(err => console.log(err))
     }, [])
+    let value = 0;
+    const media = window.matchMedia('(max-width: 991px)')
+    if (media.matches === true) {
+        value = 1
+    }
+    else {
+        value = 4
+    }
     return (
         <section className="project-area pt-100 pb-70">
             <Container fluid className="p-0">
@@ -33,7 +41,7 @@ const Project = () => {
                 </div>
                 <Swiper autoplay={{
                     "delay": 10000,
-                }} slidesPerView={4} spaceBetween={40} navigation={true} className="mySwiper">
+                }} slidesPerView={value} spaceBetween={40} navigation={true} className="mySwiper">
                     {
                         projects.map(p =>
                             <SwiperSlide key={p._id}>

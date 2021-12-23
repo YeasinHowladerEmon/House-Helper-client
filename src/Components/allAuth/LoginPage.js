@@ -5,9 +5,11 @@ import toast from 'react-hot-toast';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import swal from 'sweetalert';
 import { useAuth } from '../../Hooks/useAuth/useAuth';
-import '../Sass/Styled-Sass/SignupPage.scss'
+import '../Sass/Styled-Sass/LoginPage.scss';
 import info from '../Share/image/info-emoji.svg'
 import Navber from '../Share/Navber/Navber'
+import Bg23 from '../Share/PageTitleArea/Bg23';
+import '../Sass/Styled-Sass/SwiperStyled.scss'
 
 const LoginPage = () => {
     const [show, setShow] = useState(true)
@@ -52,8 +54,9 @@ const LoginPage = () => {
     }
     return (
         <section>
+            <Navber />
+            <Bg23 />
             <div className="user-area-all-style sign-up-area ptb-100">
-                <Navber />
                 <Toast className="toast-left" onClose={() => setShow(false)} show={show} delay={10000} autohide>
                     <Toast.Header>
                         <img src={info} className="rounded mr-2" alt="Info" />

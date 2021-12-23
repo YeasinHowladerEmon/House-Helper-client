@@ -78,9 +78,7 @@ const ServicesDetail = () => {
                                             <span>Closed</span>
                                         </li>
                                     </ul>
-                                    <div style={{ marginTop: "15px", marginLeft: "60px" }}>
-                                        <Link to="/" className="default-btn" href="">Request An Appointment</Link>
-                                    </div>
+                                    <Link to="/" className="default-btn mt-4" href="">Request An Appointment</Link>
                                 </div>
                             </div>
                         </Col>

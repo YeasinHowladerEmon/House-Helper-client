@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import '../../Sass/Styled-Sass/Dashboard.scss'
+import '../../Sass/Styled-Sass/Sidebar.scss';
 import { faFileUpload, faListUl, faTimes, faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import '../../Sass/Styled-Sass/Sidebar.scss'
+import '../../Sass/Styled-Sass/Dashboard.scss';
 import { UserContext } from "../../../App";
+import '../../Sass/Styled-Sass/SwiperStyled.scss'
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const Dashboard = () => {
                 <Row>
                     <Col lg={2} md={12} sm={12}>
                         <div id="sidebar">
-                            <div className={`${isOpen ? "d-block" : "d-lg-block d-none"} p-0 sidebar-wrapper`}>
+                            <div className={`${isOpen ? "d-block sidebar-wrapper" : "d-xl-block sidebar-wrapper d-none"} p-0 `}>
                                 <div className="sidebar-header">
                                     <div className="d-flex justify-content-between">
                                         <div className="logo">
@@ -30,7 +31,7 @@ const Dashboard = () => {
                                                 setIsOpen(false)
                                             }}
                                                 id="sidebarCollapse"
-                                                className={isOpen ? "d-block d-lg-none" : "d-none"}>
+                                                className={isOpen ? "d-block d-xl-none" : "d-none"}>
                                                 <FontAwesomeIcon className="icon" style={{ color: "white" }} icon={faTimes} />
                                             </a>
                                         </div>
@@ -44,7 +45,7 @@ const Dashboard = () => {
                                             </NavLink>
                                         </li>
                                         <li className="sidebar-item active">
-                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="customerOrderList"><FontAwesomeIcon icon={faListUl} className="icon" /> <span>Customer Order  List</span></NavLink>
+                                            <NavLink className={({ isActive }) => isActive ? "link-active" : ""} to="customerOrderList"><FontAwesomeIcon icon={faListUl} className="icon" /> <span>Order  List</span></NavLink>
                                         </li>
                                         {admin &&
                                             <> <li className="sidebar-item active">
@@ -71,7 +72,7 @@ const Dashboard = () => {
                                     setIsOpen(true)
                                 }
                                     id="sidebarCollapse"
-                                    className={isOpen ? "d-none" : "d-lg-none d-block"}>
+                                    className={isOpen ? "d-none " : "d-xl-none d-block"}>
                                     <FontAwesomeIcon className="icon" icon={faBars} />
                                 </a>
                             </header>
