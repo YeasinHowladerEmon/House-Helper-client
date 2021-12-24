@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     const onSubmit = data => {
         console.log(data)
         const loading = toast.loading('Please wait a minute...')
-        axios.put('http://localhost:5000/users/admin', data, {
+        axios.put('https://glacial-plains-17172.herokuapp.com/users/admin', data, {
             headers: {
                 "Authorization": `Bearer ${token}`,
             }

@@ -71,7 +71,7 @@ export const useAuth = () => {
         console.log(email, displayName);
         axios({
             method: method,
-            url: 'http://localhost:5000/users',
+            url: 'https://glacial-plains-17172.herokuapp.com/users',
             data: user
         }).then(res => console.log(res.data))
     }

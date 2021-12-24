@@ -16,7 +16,7 @@ const ProductList = () => {
     const [tableLoading, setTableLoading] = useState(true)
 
     useEffect(() => {
-        axios.get("http://localhost:5000/products")
+        axios.get("https://glacial-plains-17172.herokuapp.com/products")
             .then(res => {
                 setTableLoading(false)
                 setProduct(res.data);
@@ -50,7 +50,7 @@ const ProductList = () => {
             .then((willDelete) => {
                 if (willDelete) {
                     const loading = toast.loading('Please wait a minute...')
-                    axios.delete(`http://localhost:5000/deleteProduct/${id}`)
+                    axios.delete(`https://glacial-plains-17172.herokuapp.com/deleteProduct/${id}`)
                         .then(res => {
                             toast.dismiss(loading)
                             const removeProductData = product.filter(product => product._id !== id)

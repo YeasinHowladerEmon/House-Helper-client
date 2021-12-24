@@ -14,7 +14,7 @@ const CustomerOrderLists = () => {
     const [orderList, setOrderList] = useState([])
     const [tableLoading, setTableLoading] = useState(orderList.length === 0 ? true : false)
     useEffect(() => {
-        axios.get(`http://localhost:5000/orderList?email=${user.email}`)
+        axios.get(`https://glacial-plains-17172.herokuapp.com/orderList?email=${user.email}`)
             .then(res => {
                 setTableLoading(false)
                 setOrderList(res.data)
@@ -26,7 +26,7 @@ const CustomerOrderLists = () => {
 
     const handleOnchangeStatus = (id, status) => {
         const modifiedStatus = { id, status }
-        axios.put("http://localhost:5000/orderStatusUpdate", modifiedStatus)
+        axios.put("https://glacial-plains-17172.herokuapp.com/orderStatusUpdate", modifiedStatus)
             .then(res => {
                 console.log(res.data);
                 res.data && toast.success(`set to ${status}`)

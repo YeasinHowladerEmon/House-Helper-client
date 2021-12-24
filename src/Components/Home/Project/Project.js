@@ -19,7 +19,7 @@ SwiperCore.use([Pagination, Autoplay, Navigation]);
 const Project = () => {
     const [projects, setProjects] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/projects")
+        axios.get("https://glacial-plains-17172.herokuapp.com/projects")
             .then(res => setProjects(res.data))
             .catch(err => console.log(err))
     }, [])

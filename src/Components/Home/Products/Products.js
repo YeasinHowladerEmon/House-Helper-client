@@ -9,7 +9,7 @@ const Products = () => {
     const { product, setProduct } = useContext(UserContext)
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        axios.get("http://localhost:5000/products")
+        axios.get("https://glacial-plains-17172.herokuapp.com/products")
             .then(res => {
                 setIsLoading(false)
                 setProduct(res.data);

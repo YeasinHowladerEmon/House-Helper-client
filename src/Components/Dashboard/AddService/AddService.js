@@ -27,7 +27,7 @@ const AddProduct = () => {
         formData.append('delPrice', product.delPrice);
         console.log(data.image[0]);
 
-        axios.post("http://localhost:5000/addProduct", formData)
+        axios.post("https://glacial-plains-17172.herokuapp.com/addProduct", formData)
             .then(res => {
                 toast.dismiss(loading)
                 if (res.data) {

@@ -16,7 +16,7 @@ const Contact = () => {
     const sendEmail = (data) => {
         const loading = toast.loading('Please wait a minute...')
 
-        axios.post("http://localhost:5000/contact", data)
+        axios.post("https://glacial-plains-17172.herokuapp.com/contact", data)
             .then(res => {
                 toast.dismiss(loading);
                 if (res.data) {

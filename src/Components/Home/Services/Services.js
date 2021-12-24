@@ -12,7 +12,7 @@ const Services = () => {
     const [isLoading, setLoading] = useState(true)
     
     useEffect(() => {
-        axios.get("http://localhost:5000/services")
+        axios.get("https://glacial-plains-17172.herokuapp.com/services")
             .then((res) => {
                 setLoading(false)
                 setServices(res.data)

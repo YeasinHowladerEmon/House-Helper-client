@@ -47,7 +47,7 @@ function App() {
   }, [cartItems])
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/usersAdmin?email=${user.email}`)
+    axios.get(`https://glacial-plains-17172.herokuapp.com/usersAdmin?email=${user.email}`)
       .then(res => {
         console.log(res.data.admin);
         setAdmin(res.data.admin)

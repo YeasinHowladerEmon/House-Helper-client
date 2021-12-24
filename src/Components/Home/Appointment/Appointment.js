@@ -22,7 +22,7 @@ const Appointment = () => {
             startDate
         }
 
-        axios.post("http://localhost:5000/appointment", appointment)
+        axios.post("https://glacial-plains-17172.herokuapp.com/appointment", appointment)
             .then(res => {
                 toast.dismiss(loading);
                 if (res.data) {

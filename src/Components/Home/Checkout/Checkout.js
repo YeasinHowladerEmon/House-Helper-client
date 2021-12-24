@@ -42,7 +42,7 @@ const Checkout = () => {
             orderTime: new Date().toLocaleString(),
 
         }
-        axios.post("http://localhost:5000/checkout", data)
+        axios.post("https://glacial-plains-17172.herokuapp.com/checkout", data)
             .then(res => {
                 toast.dismiss(loading);
                 if (res.data) {
