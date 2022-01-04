@@ -1,4 +1,7 @@
 <h1>Your-House-Helper</h2>
+
+![Your House Helper](https://user-images.githubusercontent.com/76776058/147998768-44139c29-64a1-4871-8cc0-7de42adc2bf5.png)
+
 <h2>About & Features </h2>
 
 Your-House-Helper is a full-stack-page cleaning service and product provider web app.
