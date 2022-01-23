@@ -15,9 +15,8 @@ const LoginPage = () => {
     const [show, setShow] = useState(true)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loadings, setLoadings] = useState(false);
-    const { login, user, googleSignIn } = useAuth();
+    const { login, googleSignIn } = useAuth();
 
-    console.log(user)
 
     let navigate = useNavigate();
     let location = useLocation();

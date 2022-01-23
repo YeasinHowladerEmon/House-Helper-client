@@ -4,11 +4,11 @@ import { UserContext } from '../../App';
 import { useAuth } from '../../Hooks/useAuth/useAuth';
 
 
-const AdminRoute = ({ children, ...rest }) => {
-    const { user } = useAuth();
-    const { admin } = useContext(UserContext)
+const AdminRoute = ({ children }) => {
+    // const { user } = useAuth();
+    const { admin, user:{email} } = useContext(UserContext)
     const location = useLocation()
-    if (user && admin) {
+    if (email && admin) {
         return children
     }
     return <Navigate to='/login' state={{ path: location }} />

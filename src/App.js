@@ -55,7 +55,7 @@ function App() {
   }, [user.email])
 
   return (
-    <UserContext.Provider value={{ product, setProduct, details, setDetails, cartItems, setCartItems, productDetails, setProductDetails, admin }}>
+    <UserContext.Provider value={{ product, setProduct, details, user, setDetails, cartItems, setCartItems, productDetails, setProductDetails, admin }}>
       <BrowserRouter>
         <Toaster />
         <Suspense fallback={<LoadingSpinner/>}>
